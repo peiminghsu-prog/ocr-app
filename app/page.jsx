@@ -313,7 +313,7 @@ function UploadView({ files, isDragging, setIsDragging, allCompleted, setCurrent
           {isDragging ? '放開以上傳檔案' : '拖放 PDF 或圖片檔案至此，或點擊選擇檔案'}
         </div>
         <div className="upload-hint" style={{ fontSize: '14px', color: '#666', marginTop: '8px' }}>
-          支援 PDF、JPG、PNG、GIF、WEBP 格式
+          支援 JPG、PNG、GIF、WEBP 格式
         </div>
       </div>
 
