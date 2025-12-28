@@ -7,7 +7,10 @@ import { createWorker } from 'tesseract.js';
  * @returns {Promise<string>} 返回辨識的文字字串
  */
 export async function performOCR(imageSource, onProgress) {
-  const worker = await createWorker('chi_tra+eng', 1, {
+const worker = await createWorker('chi_tra+eng', 1, {
+    workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js',
+    langPath: 'https://cdn.jsdelivr.net/npm/tesseract.js-data@5',
+    corePath: 'https://cdn.jsdelivr.net/npm/tesseract.js-core@5/tesseract-core.wasm.js',
     logger: onProgress ? (m) => {
       if (m.status === 'recognizing text') {
         onProgress(Math.round(m.progress * 100));
